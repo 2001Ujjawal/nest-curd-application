@@ -1,5 +1,14 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Query,
+} from '@nestjs/common';
 import { UserService } from './user.service';
+import { CreateUserDto } from './dto/create-user.dto/create-user.dto';
 
 @Controller('user')
 export class UserController {
@@ -30,7 +39,12 @@ export class UserController {
   }
 
   @Post()
-  create(@Body() user: {}): object {
-    return user;
+  create(@Body() CreateUserDto: CreateUserDto): { user: CreateUserDto } {
+    try {
+      return { user: CreateUserDto };
+    } catch (error) {
+      console.log('================= user create', error);
+      throw new BadRequestException('Something went wrong');
+    }
   }
 }
