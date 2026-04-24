@@ -1,0 +1,36 @@
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { UserService } from './user.service';
+
+@Controller('user')
+export class UserController {
+  constructor(private readonly userService: UserService) {}
+
+  @Get('/service-function-test')
+  serviceFunctionTest() {
+    return this.userService.greet();
+  }
+
+  @Get('/users')
+  findAllV1(@Query('name') name?: string) {
+    console.log('=================', name);
+    if (name === undefined || name === null || name === '') {
+      return 'n/A';
+    }
+    return name;
+  }
+
+  @Get(':id')
+  find(@Param('id') id: string) {
+    return `This action updates a #${id} cat`;
+  }
+
+  @Get('')
+  findAll(@Query() query: { name?: string; email?: string; status: boolean }) {
+    return query;
+  }
+
+  @Post()
+  create(@Body() user: {}): object {
+    return user;
+  }
+}
