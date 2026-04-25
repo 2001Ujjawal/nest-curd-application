@@ -1,0 +1,20 @@
+nest module create 
+nest g module 
+nest g controller 
+
+// 
+
+nest -help 
+nest g -help
+
+
+nest new project-name
+nest g module users
+nest g controller users
+nest g service users
+nest start --watch   # auto restart (important for you)
+
+
+
+important things 
+    - function and routes  indention mater 

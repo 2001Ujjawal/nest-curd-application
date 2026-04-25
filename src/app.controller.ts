@@ -1,4 +1,15 @@
-import { Controller, Get, Post, Body, Patch, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Delete,
+  Put,
+  HttpStatus,
+  Query,
+  Param,
+} from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -9,11 +20,27 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
-  @Post('/test-post')
-  checkPostRequest(): object {
-    console.log('hello this is post routes');
-    return {
-      success: 'hello',
-    };
+
+  @Get('query-routes')
+  queryRoutes(@Query('name') name?: string) {
+    if (name) {
+      return `Searching for ${name}`;
+    }
+    return 'No name provided';
+  }
+
+  @Get('/users/:id')
+  pramsRoutes(@Param('id') id: string) {
+    return { id };
+  }
+
+  @Put('/test-put')
+  checkPutController(): string {
+    return 'hello put ';
+  }
+
+  @Post('/post-routes')
+  create(@Body() user: {}): object {
+    return user;
   }
 }
