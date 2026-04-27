@@ -15,7 +15,10 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get('/service-function-test')
-  serviceFunctionTest() {
+  async serviceFunctionTest() {
+    const userList = await this.userService.findAllUser();
+    console.log('=========user data', userList);
+    console.log('----------------- user controller', process.env.HELLO);
     return this.userService.greet();
   }
 
