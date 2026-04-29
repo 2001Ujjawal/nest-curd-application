@@ -42,7 +42,7 @@ $ npm run start:dev  -- live changes mode
 
 # production mode
 $ npm run start:prod
-```
+
 
 ## Run tests
 
