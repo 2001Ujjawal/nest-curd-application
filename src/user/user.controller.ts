@@ -9,8 +9,7 @@ import {
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto/create-user.dto';
-
-@Controller('user')
+@Controller()
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
@@ -40,7 +39,7 @@ export class UserController {
   findAll(@Query() query: { name?: string; email?: string; status: boolean }) {
     return query;
   }
-  @Post()
+  @Post('/users')
   create(@Body() CreateUserDto: CreateUserDto): { user: CreateUserDto } {
     try {
       return { user: CreateUserDto };
