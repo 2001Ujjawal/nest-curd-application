@@ -40,7 +40,6 @@ export class UserController {
   findAll(@Query() query: { name?: string; email?: string; status: boolean }) {
     return query;
   }
-
   @Post()
   create(@Body() CreateUserDto: CreateUserDto): { user: CreateUserDto } {
     try {
