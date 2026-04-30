@@ -18,3 +18,11 @@ nest start --watch   # auto restart (important for you)
 
 important things 
     - function and routes  indention mater 
+
+
+database 
+    npm run migration:generate
+    npm run migration:run
+    npm run migration:revert
+    
+nest g class user/dto/create-user.dto --no-spec
