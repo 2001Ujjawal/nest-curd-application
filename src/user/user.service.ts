@@ -7,12 +7,10 @@ import { Repository } from 'typeorm';
 export class UserService {
   constructor(
     @InjectRepository(User)
-    private userRepo: Repository<User>,
+    private readonly userRepo: Repository<User>,
   ) {}
-  greet(): string {
-    return 'hello form service';
-  }
-  async findAllUser() {
-    return await this.userRepo.find();
+
+  async findAllUser(): Promise<User[]> {
+    return this.userRepo.find();
   }
 }

@@ -14,12 +14,13 @@ import { CreateUserDto } from './dto/create-user.dto/create-user.dto';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Get('/service-function-test')
+  @Get('/')
   async serviceFunctionTest() {
     const userList = await this.userService.findAllUser();
-    console.log('=========user data', userList);
-    console.log('----------------- user controller', process.env.HELLO);
-    return this.userService.greet();
+    return {
+      status: true,
+      users: userList,
+    };
   }
 
   @Get('/users')

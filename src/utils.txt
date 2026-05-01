@@ -15,6 +15,12 @@ nest g service users
 nest start --watch   # auto restart (important for you)
 
 
+DB 
+npm run migration:generate
+npm run migration:run
+npm run migration:revert
 
 important things 
     - function and routes  indention mater 
+
+
