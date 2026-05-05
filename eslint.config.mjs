@@ -15,8 +15,10 @@ export default [
     },
     rules: {
       // optional tweaks
-      '@typescript-eslint/no-unsafe-call': 'warn',
-      '@typescript-eslint/no-unsafe-member-access': 'warn',
+      // '@typescript-eslint/no-unsafe-call': 'warn',
+      // '@typescript-eslint/no-unsafe-member-access': 'warn',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
     },
   },
 ];
