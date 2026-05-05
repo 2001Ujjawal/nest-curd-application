@@ -14,11 +14,10 @@ export default [
       },
     },
     rules: {
-      // optional tweaks
-      // '@typescript-eslint/no-unsafe-call': 'warn',
-      // '@typescript-eslint/no-unsafe-member-access': 'warn',
-      '@typescript-eslint/no-unsafe-call': 'off',
-      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off', // warn
+      '@typescript-eslint/no-unsafe-call': 'off', // warn
+      '@typescript-eslint/no-unsafe-member-access': 'off', // warn
+      '@typescript-eslint/no-unsafe-return': 'off', // warn
     },
   },
 ];
