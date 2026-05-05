@@ -1,7 +1,18 @@
 import type { Response } from 'express';
-import { Body, Controller, Get, Param, Post, Put, Res } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Put,
+  Request,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto/create-user.dto';
 import { UserService } from './user.service';
+import { AuthGuard } from 'src/auth/auth.guard';
 @Controller('/users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
@@ -28,5 +39,13 @@ export class UserController {
       requestID: id,
       data: user,
     };
+  }
+
+  @UseGuards(AuthGuard)
+  @Get('/profile')
+  getProfile(@Request() req) {
+    const tokenUserValue = req.user;
+    console.log('=================tokenUserValue', tokenUserValue);
+    return 'hello';
   }
 }

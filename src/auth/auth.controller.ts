@@ -6,7 +6,7 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
   @Post('/login')
   async login() {
-    
+    return await this.authService.jwtToken();
   }
   @Get()
   importUserServiceTest(): object {

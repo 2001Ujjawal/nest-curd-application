@@ -17,6 +17,7 @@ import { AuthModule } from './auth/auth.module';
       synchronize: false, // dev only
       migrations: ['dist/migrations/*.js'],
     }),
+
     UserModule,
     AuthModule,
   ],
