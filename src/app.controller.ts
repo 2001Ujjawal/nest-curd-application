@@ -5,6 +5,6 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
   @Get('/')
   serverCheck(): object {
-    return { message: 'server start successfully !!!!!!!' };
+    return { status: 200, message: 'server start successfully !!!!!!!' };
   }
 }

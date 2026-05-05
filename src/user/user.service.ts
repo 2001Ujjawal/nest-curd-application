@@ -21,4 +21,8 @@ export class UserService {
       throw new BadRequestException(error);
     }
   }
+
+  greet(): string {
+    return 'hello from user service to auth module';
+  }
 }
