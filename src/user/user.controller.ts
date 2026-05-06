@@ -3,6 +3,7 @@ import {
   Body,
   Controller,
   Get,
+  Logger,
   Param,
   Post,
   Put,
@@ -15,6 +16,7 @@ import { UserService } from './user.service';
 import { AuthGuard } from 'src/auth/auth.guard';
 @Controller('/users')
 export class UserController {
+  private readonly logger = new Logger(UserController.name);
   constructor(private readonly userService: UserService) {}
 
   @Post('/')
@@ -25,6 +27,7 @@ export class UserController {
 
   @Get('/')
   findAllUsers(@Res() res: Response) {
+    this.logger.log('Doing something...', UserController.name);
     return res.status(200).json({
       status: true,
       statusCode: 200,
@@ -33,6 +36,7 @@ export class UserController {
       error: null,
     });
   }
+
   @Put(':id')
   update(@Param('id') id: string, @Body() user: CreateUserDto) {
     return {
