@@ -28,3 +28,5 @@ Git
 
 git branch 
 git checkout -b explore-socketio
+git push -u origin explore-socketio
+git checkout branch-name
