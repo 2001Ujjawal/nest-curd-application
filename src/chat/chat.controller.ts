@@ -9,5 +9,4 @@ export class ChatController {
   sendMessage(@Body() body: any) {
     return this.chatService.sendMessage(body);
   }
-//   3 Y 6 M 
 }
