@@ -30,3 +30,11 @@ git branch
 git checkout -b explore-socketio
 git push -u origin explore-socketio
 git checkout branch-name
+
+
+merge
+
+git checkout main
+git pull origin main
+git merge explore
+git push origin main
