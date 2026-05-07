@@ -5,12 +5,5 @@ import { ChatGateway } from './chat.gateway';
 export class ChatService {
   constructor(private readonly chatGateway: ChatGateway) {}
 
-  sendMessage(data: any) {
-    this.chatGateway.sendMessageToAll(data);
-    return {
-      status: true,
-      message: 'Message sent via socket',
-      data,
-    };
-  }
+  
 }

@@ -24,3 +24,7 @@ important things
     - function and routes  indention mater 
 
 
+Git 
+
+git branch 
+git checkout -b explore-socketio
