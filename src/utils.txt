@@ -33,7 +33,6 @@ git checkout branch-name
 
 
 merge
-
 git checkout main
 git pull origin main
 git merge explore
