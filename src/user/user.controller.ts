@@ -50,6 +50,8 @@ export class UserController {
   getProfile(@Request() req) {
     const tokenUserValue = req.user;
     console.log('=================tokenUserValue', tokenUserValue);
-    return 'hello';
+    return {
+      tokenUserValue,
+    };
   }
 }

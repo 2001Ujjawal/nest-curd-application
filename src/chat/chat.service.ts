@@ -4,6 +4,4 @@ import { ChatGateway } from './chat.gateway';
 @Injectable()
 export class ChatService {
   constructor(private readonly chatGateway: ChatGateway) {}
-
-  
 }
