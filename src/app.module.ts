@@ -18,7 +18,6 @@ import { ChatModule } from './chat/chat.module';
       synchronize: false, // dev only
       migrations: ['dist/migrations/*.js'],
     }),
-
     UserModule,
     AuthModule,
     ChatModule,

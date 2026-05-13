@@ -7,6 +7,7 @@ nest g controller
 nest -help 
 nest g -help
 
+nest g resource users
 
 nest new project-name
 nest g module users
@@ -32,8 +33,36 @@ git push -u origin explore-socketio
 git checkout branch-name
 
 
+
 merge
 git checkout main
 git pull origin main
 git merge explore
 git push origin main
+
+
+
+prisma Set up with mysql 
+
+npm install prisma @prisma/client mysql2
+npx prisma init
+
+database connection 
+npx prisma db pull
+
+npx prisma migrate dev --name create_student_table
+
+npx prisma db push
+
+npx prisma generate
+npx prisma generate
+
+
+rm -rf node_modules
+
+
+
+
+Test 
+
+ node -e "require('dotenv').config(); console.log(process.env.DATABASE_URL)" 
